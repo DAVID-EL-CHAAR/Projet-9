@@ -23,5 +23,5 @@ COPY --from=build /app/target/patient-management-microservice-0.0.1-SNAPSHOT.jar
 # Exposer le port 8080 pour que l'application puisse recevoir des requêtes
 EXPOSE 8080
 
-# Commande pour lancer l'application Spring Boot
-ENTRYPOINT ["java", "-jar", "/app/patient-management-microservice.jar"]
+# Commande pour lancer l'application Spring Boot avec le profil docker
+ENTRYPOINT ["java", "-jar", "/app/patient-management-microservice.jar", "--spring.profiles.active=docker"]
